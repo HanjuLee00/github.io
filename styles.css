@@ -1,61 +1,73 @@
+/* 기본 스타일 */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    text-align: center;
     background-color: #f5f5f5;
+    color: #333;
 }
+
+/* 헤더 스타일 */
 header {
-    background-color: #004d40;
+    background-color: #004d40; /* 어두운 초록색 */
     color: white;
-    text-align: center;
     padding: 20px;
-    font-size: 1.5em;
 }
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
+
+/* 태극 문양 로고 스타일 */
+.taeguk-logo {
+    width: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
-nav {
-    text-align: center;
-    margin: 20px 0;
+
+/* 제목 스타일 */
+header h1 {
+    display: inline;
+    font-size: 2em;
+    margin: 0;
 }
+
+/* 포인트 색상 버튼 스타일 */
 button {
-    background-color: #00695c;
-    color: white;
     border: none;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
+    border-radius: 5px;
+    color: white;
     font-size: 1em;
-    transition: background-color 0.3s;
 }
+
+.red-button {
+    background-color: #d62828; /* 빨강 */
+}
+
+.blue-button {
+    background-color: #003049; /* 파랑 */
+}
+
+.white-button {
+    background-color: #eae2b7; /* 밝은 하양 */
+    color: #333;
+}
+
+.black-button {
+    background-color: #212529; /* 검정 */
+}
+
 button:hover {
-    background-color: #00796b;
+    opacity: 0.8;
 }
-#content {
-    text-align: center;
+
+/* 콘텐츠 영역 스타일 */
+.content {
     padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-#content img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-#content a {
-    display: block;
-    margin-top: 10px;
-    color: #00695c;
-    text-decoration: none;
-}
-#content a:hover {
-    text-decoration: underline;
+
+/* 푸터 스타일 */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
 }
