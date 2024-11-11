@@ -8,24 +8,25 @@
 </head>
 <body>
     <header>
+        <img src="images/taeguk.png" alt="Taeguk Symbol" class="taeguk-logo">
         <h1>Explore Beautiful Korea</h1>
         <p>Discover the charm of Korea's famous tourist spots!</p>
     </header>
 
-    <nav>
-        <button onclick="showPlace('jeonju')">Jeonju Hanok Village</button>
-        <button onclick="showPlace('hangang')">Hangang River, Seoul</button>
-        <button onclick="showPlace('baeknokdam')">Baeknokdam, Jeju Island</button>
-        <button onclick="showPlace('namsan')">Namsan, Seoul</button>
-        <button onclick="showPlace('hongdae')">Hongdae, Seoul</button>
-    </nav>
+    <div>
+        <button class="red-button" onclick="showPlace('jeonju')">Jeonju Hanok Village</button>
+        <button class="blue-button" onclick="showPlace('hangang')">Hangang River, Seoul</button>
+        <button class="white-button" onclick="showPlace('baeknokdam')">Baeknokdam, Jeju Island</button>
+        <button class="black-button" onclick="showPlace('namsan')">Namsan, Seoul</button>
+        <button class="blue-button" onclick="showPlace('hongdae')">Hongdae, Seoul</button>
+    </div>
 
-    <section id="content">
-        <p>Select a place to see beautiful images and learn more about it.</p>
-    </section>
+    <div id="content" class="content">
+        
+    </div>
 
     <footer>
-        <p>© 2024 Hanju Lee</p>
+        <p>&copy; 2024 Hanju Lee</p>
     </footer>
 
     <script src="script.js"></script>
