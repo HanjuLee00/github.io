@@ -31,15 +31,25 @@ const destinations = {
     }
 };
 
-// JavaScript function to display content
-document.querySelectorAll('.nav-button').forEach(button => {
-    button.addEventListener('click', function() {
-        const place = destinations[button.textContent];
+// Function to display the content for a place
+function showPlace(placeName) {
+    const place = destinations[placeName];
+    if (place) {
         document.getElementById('content').innerHTML = `
             <h2>${place.title}</h2>
             <img src="${place.image}" alt="${place.title}">
             <p>${place.description}</p>
             <a href="${place.wikipedia}" target="_blank">Learn more on Wikipedia</a>
         `;
+    } else {
+        document.getElementById('content').innerHTML = "<p>Destination not found.</p>";
+    }
+}
+
+// Add event listeners to buttons
+document.querySelectorAll('.nav-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const placeName = button.textContent.trim();
+        showPlace(placeName);
     });
 });
