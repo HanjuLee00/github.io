@@ -33,7 +33,7 @@ const destinations = {
 
 // Function to display the content for a place
 function showPlace(placeName) {
-    const place = destinations[placeName];
+    const place = destinations[placeName.trim()];
     if (place) {
         document.getElementById('content').innerHTML = `
             <h2>${place.title}</h2>
