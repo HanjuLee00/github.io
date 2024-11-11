@@ -1,30 +1,45 @@
-function showPlace(place) {
-    const content = document.getElementById('content');
-
-    if (place === 'jeonju') {
-        content.innerHTML = "<h2>Jeonju Hanok Village</h2>" +
-                            "<img src='images/jeonju_hanok_village.jpg' alt='Jeonju Hanok Village'>" +
-                            "<p>Jeonju Hanok Village is a traditional Korean village with over 800 traditional hanok houses. This area has preserved the old-style architecture and culture of Korea, allowing visitors to experience authentic Korean heritage. The village is known for its beautiful hanok houses, Korean-style roofs, wooden walls, and sliding doors. Walking through Jeonju Hanok Village, visitors can explore tea houses, artisan shops, and restaurants that serve local delicacies such as bibimbap, one of Korea's most famous dishes. The village is especially popular during autumn when the foliage creates a stunning backdrop.</p>" +
-                            "<a href='https://en.wikipedia.org/wiki/Jeonju_Hanok_Village' target='_blank'>Learn more on Wikipedia</a>";
-    } else if (place === 'hangang') {
-        content.innerHTML = "<h2>Hangang River</h2>" +
-                            "<img src='images/hangang_river.jpg' alt='Hangang River'>" +
-                            "<p>The Hangang River, also known as the Han River, is one of the major rivers in South Korea and flows through the heart of Seoul. It provides a peaceful escape from the bustling city life, offering scenic parks, biking paths, and riverside cafes. Hangang is a popular spot for locals and tourists alike, who come to enjoy picnics, water sports, and night views of Seoul's skyline. The river banks are lined with various parks such as Yeouido Hangang Park, which hosts festivals and events throughout the year, making it a vibrant cultural and leisure hub in Seoul.</p>" +
-                            "<a href='https://en.wikipedia.org/wiki/Han_River_(Korea)' target='_blank'>Learn more on Wikipedia</a>";
-    } else if (place === 'baeknokdam') {
-        content.innerHTML = "<h2>Baeknokdam</h2>" +
-                            "<img src='images/baeknokdam_jeju.jpg' alt='Baeknokdam'>" +
-                            "<p>Baeknokdam is a crater lake located at the summit of Hallasan Mountain on Jeju Island, South Korea. This lake is named after the Korean words for 'white deer lake,' inspired by the myth that white deer would descend to the lake and drink from its waters. Surrounded by lush vegetation and breathtaking views, Baeknokdam is a sacred and mystical place that attracts hikers and nature lovers. Reaching the lake requires a challenging hike, but the serene atmosphere and panoramic views from the summit make it worth the effort. It’s one of the natural wonders of Jeju Island.</p>" +
-                            "<a href='https://en.wikipedia.org/wiki/Baengnokdam' target='_blank'>Learn more on Wikipedia</a>";
-    } else if (place === 'namsan') {
-        content.innerHTML = "<h2>Namsan</h2>" +
-                            "<img src='images/namsan_seoul.jpg' alt='Namsan'>" +
-                            "<p>Namsan, meaning 'South Mountain,' is located in the center of Seoul and is a popular destination for both locals and tourists. At the peak of Namsan stands the N Seoul Tower, an iconic symbol of the city that offers panoramic views of Seoul’s skyline. Visitors can hike up the mountain or take a cable car to the top, where they’ll find the 'Locks of Love' installation, a popular attraction for couples. Namsan also features well-maintained trails, cherry blossoms in spring, and beautiful autumn foliage, making it an ideal spot for seasonal photography.</p>" +
-                            "<a href='https://en.wikipedia.org/wiki/Namsan_(Seoul)' target='_blank'>Learn more on Wikipedia</a>";
-    } else if (place === 'hongdae') {
-        content.innerHTML = "<h2>Hongdae</h2>" +
-                            "<img src='images/hongdae_seoul.jpg' alt='Hongdae'>" +
-                            "<p>Hongdae is a vibrant and youthful district in Seoul known for its artistic and energetic atmosphere. Named after the nearby Hongik University, Hongdae is filled with street performers, indie music bands, and unique art galleries. The area is also famous for its lively nightlife, with a variety of cafes, clubs, and restaurants catering to young people and tourists. Hongdae’s streets are often adorned with colorful murals and graffiti, making it a hub for creativity and self-expression. It's a must-visit for anyone interested in Seoul's contemporary youth culture.</p>" +
-                            "<a href='https://en.wikipedia.org/wiki/Hongdae' target='_blank'>Learn more on Wikipedia</a>";
+const destinations = {
+    "Jeonju Hanok Village": {
+        title: "Jeonju Hanok Village",
+        image: "images/jeonju_hanok_village.jpg",
+        description: "Jeonju Hanok Village is a traditional Korean village with over 800 traditional hanok houses. It is one of the most popular tourist attractions in Korea, known for preserving Korean history and culture. Visitors can experience traditional Korean architecture, taste famous Jeonju Bibimbap, and explore the many local craft shops. The village has a unique charm that combines the beauty of ancient Korean houses with modern conveniences, making it a must-visit for anyone interested in Korea's rich cultural heritage.",
+        wikipedia: "https://en.wikipedia.org/wiki/Jeonju_Hanok_Village"
+    },
+    "Hangang River, Seoul": {
+        title: "Hangang River, Seoul",
+        image: "images/hangang_river.jpg",
+        description: "The Hangang River runs through the heart of Seoul, offering a refreshing natural space within the bustling city. The river is surrounded by 12 riverside parks where visitors can enjoy picnics, cycling, and water sports. During the summer, the parks host various festivals, such as the Hangang Summer Festival. The night view along the river is stunning, with the city lights reflecting off the water. Hangang River is a favorite spot for locals and tourists alike to relax and unwind.",
+        wikipedia: "https://en.wikipedia.org/wiki/Han_River_(Korea)"
+    },
+    "Baeknokdam, Jeju Island": {
+        title: "Baeknokdam, Jeju Island",
+        image: "images/baeknokdam_jeju.jpg",
+        description: "Baeknokdam is a crater lake located at the summit of Hallasan Mountain, the tallest mountain in South Korea, on Jeju Island. Known for its breathtaking views, Baeknokdam attracts hikers and nature lovers. The lake is surrounded by lush vegetation and is said to have been formed thousands of years ago. It is one of Jeju’s most iconic natural landmarks, offering a serene and mystical atmosphere for those who reach its peak after a challenging hike.",
+        wikipedia: "https://en.wikipedia.org/wiki/Baengnokdam"
+    },
+    "Namsan, Seoul": {
+        title: "Namsan, Seoul",
+        image: "images/namsan_seoul.jpg",
+        description: "Namsan is a popular mountain located in central Seoul, home to the famous Namsan Seoul Tower. The mountain offers panoramic views of Seoul and is a popular spot for hiking. Visitors can also explore the Namsan Hanok Village, enjoy cable car rides, and experience the famous 'Love Locks' at the top of the tower. Namsan is a blend of nature and urban life, making it a perfect escape within the city.",
+        wikipedia: "https://en.wikipedia.org/wiki/Namsan_(Seoul)"
+    },
+    "Hongdae, Seoul": {
+        title: "Hongdae, Seoul",
+        image: "images/hongdae_seoul.jpg",
+        description: "Hongdae is a vibrant neighborhood in Seoul, known for its youthful energy, street art, and indie music scene. It’s a hub for arts, cafes, clubs, and live performances. Hongdae is famous for its unique shops and street performances, making it a popular destination for young people and tourists who want to experience Seoul’s modern and creative culture. The area also hosts a variety of cultural events and festivals throughout the year.",
+        wikipedia: "https://en.wikipedia.org/wiki/Hongdae,_Seoul"
     }
-}
+};
+
+// JavaScript function to display content
+document.querySelectorAll('.nav-button').forEach(button => {
+    button.addEventListener('click', function() {
+        const place = destinations[button.textContent];
+        document.getElementById('content').innerHTML = `
+            <h2>${place.title}</h2>
+            <img src="${place.image}" alt="${place.title}">
+            <p>${place.description}</p>
+            <a href="${place.wikipedia}" target="_blank">Learn more on Wikipedia</a>
+        `;
+    });
+});
